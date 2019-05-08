@@ -14,15 +14,15 @@ public class InsertionSorter extends Sorter {
         mySort();
     }
     
-
-    /**
-      sort the user's data, implementing insertion sort
-     */
+	/**
+		Run insert1 for positions 1 through n–1 in the list.
+	*/
+    //sort the user's data, implementing insertion sort 
     public void mySort() {
 		
 		int indexToInsert;
 		for ( indexToInsert = 1;
-				indexToInsert < elements.size();
+				indexToInsert <= elements.size()-1;
 				indexToInsert++){
 			insert1(indexToInsert);
 			// for debugging
@@ -34,6 +34,13 @@ public class InsertionSorter extends Sorter {
 				
     }
 	
+	/**
+		Given: sorted and unsorted regions
+
+		Insert the first unsorted element in its place in the current sorted region,
+		shifting all larger values, to make space,
+		thereby expanding the sorted region
+	*/
 	private void insert1(int alreadyInserted){
 		int indexToCompare;
 		String insertValue = elements.get(alreadyInserted);
